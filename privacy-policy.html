@@ -191,12 +191,12 @@
         <li>Uninstall the extension to remove all data</li>
       </ul>
 
-       <h2>9. Date Protection Mechanisms </h2>
+       <h2>9. Data Protection Mechanisms </h2>
       <p>We implement the following measures to protect your data:</p>
       <ul>
         <li>Local-only processing: All data is processed entirely on your device using Chrome's built-in storage APIs. No data is ever transmitted to external servers. </li>
         <li>No remote storage: We do not operate any servers or databases. Your order data and Gmail tokens exist only in your browser's local storage.</li>
-        <li>Minimal data access: For Gmail, we only search for specific Swiggy Instamart delivery emails. We do not access, read, or store any other emails.</li>
+        <li>Minimal local caching: We only cache the extracted order amount and date in your browser's local storage - never the full email content. No data is ever stored on any external server.</li>
         <li>Token security: Gmail authentication tokens are stored securely using Chrome's built-in identity API and can be revoked by the user at any time.</li>
         <li>Automatic cleanup: All cached data is automatically deleted when you uninstall the extension.</li>
          <li>User control: You can disconnect Gmail access and clear all cached data at any time from within the extension.</li>
@@ -207,14 +207,14 @@
 
 <p> This section specifically addresses how we protect data accessed through Google APIs (Gmail). </p>
 
-<h3>How we access Google data:</h3>
+<h3>How we access Google Gmail data:</h3>
 <ul>
   <li>We request read-only access to Gmail (gmail.readonly scope)</li>
   <li>We ONLY search for emails from "noreply@swiggy.in" </li>
   <li>We extract ONLY the order total and delivery date from these emails</li>
 </ul>
 
-<h3>How we protect Google user data:</h3>
+<h3>How we protect the user data:</h3>
 <ul>
   <li>Local processing only: Gmail data is processed entirely in your browser. No Google user data is ever transmitted to any external server.</li>
   <li>No server storage: We do not operate servers or databases. Your Gmail data exists only in your browser's local storage.</li>
